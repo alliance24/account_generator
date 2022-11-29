@@ -12,21 +12,25 @@ n = ToastNotifier()
 nb = int(input("Combien de comptes ? "))
 #file = open("accounts.txt", "a+")
 
-names_file = open("noms.txt", "r")
+names_file = open("account_generator-main\\noms.txt", "r")
 lines = names_file.readlines()
 def nom():
     liste = []
     for line in lines:
         liste.append(line.strip())
+    for i in liste:
+        i.encode()
     names_file.close
     return random.choice(liste)
 
-firsts_name_file = open("prenoms.txt", "r")
+firsts_name_file = open("account_generator-main\\prenoms.txt", "r")
 lines = firsts_name_file.readlines()
 def prenom():
     liste = []
     for line in lines:
         liste.append(line.strip())
+    for i in liste:
+        i.encode()
     firsts_name_file.close
     return random.choice(liste)
 
@@ -37,8 +41,11 @@ def birth_date():
     date = f"{day}/{month}/{year}"
     return date
 
+def mdp():
+    return
+
 #file.write("Mail        Nom     Prenom      Date de naissance\n")
-ws.append(["Mail", "Nom", "Prenom", "Date de naissance"])
+ws.append(["Mail", "Nom", "Prenom", "Date de naissance", "Mot de passe"])
 print()
 min = 0
 for i in range(nb):
@@ -53,6 +60,8 @@ for i in range(nb):
         print(pourcent, "%")
         min = pourcent
 #file.close
+
+
 wb.save("accounts.xlsx")
 print("100 %")
 print(f"Génération de {nb} comptes terminée...")
