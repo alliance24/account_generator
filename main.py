@@ -1,7 +1,14 @@
+# -*- coding: utf-8 -*-
+
+
+# 2min --> 1 000 000 de comptes
+
+
+
 from openpyxl import Workbook, load_workbook
 from win10toast import ToastNotifier
 import random
-import os
+import codecs
 
 wb = Workbook()
 ws = wb.active
@@ -12,25 +19,21 @@ n = ToastNotifier()
 nb = int(input("Combien de comptes ? "))
 #file = open("accounts.txt", "a+")
 
-names_file = open("account_generator-main\\noms.txt", "r")
+names_file = open("account_generator-main\\noms.txt", "r", encoding='utf8')
 lines = names_file.readlines()
 def nom():
     liste = []
     for line in lines:
         liste.append(line.strip())
-    for i in liste:
-        i.encode()
     names_file.close
     return random.choice(liste)
 
-firsts_name_file = open("account_generator-main\\prenoms.txt", "r")
+firsts_name_file = open("account_generator-main\\prenoms.txt", "r", encoding='utf8')
 lines = firsts_name_file.readlines()
 def prenom():
     liste = []
     for line in lines:
         liste.append(line.strip())
-    for i in liste:
-        i.encode()
     firsts_name_file.close
     return random.choice(liste)
 
