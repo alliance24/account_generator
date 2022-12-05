@@ -40,7 +40,7 @@ def prenom():
 def birth_date():
     day = random.randint(1, 30)
     month = random.randint(1, 12)
-    year = random.randint(1950, 2010)
+    year = random.randint(1950, 2002)
     date = f"{day}/{month}/{year}"
     return date
 
