@@ -60,7 +60,7 @@ for i in range(nb):
     ws.append([mail, nom1, prenom1, date])
     pourcent = int((i/nb)*100)
     if pourcent > min:
-        print(pourcent, "%")
+        print(pourcent, "%", end="\r")
         min = pourcent
 #file.close
 
